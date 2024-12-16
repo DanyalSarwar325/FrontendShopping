@@ -51,7 +51,7 @@ export const CreateProduct = () => {
       if (product.Image) {
         formData.append("Image", product.Image);
       }
-      
+
       product.subImages.forEach((file) => {
         formData.append("subImages", file);
       });
