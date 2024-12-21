@@ -6,7 +6,7 @@ export const Sidebar = () => {
   const menuItems = [
     { name: "Dashboard", path: "/admin/AdminDashboard" },
     { name: "Add Products", path: "/admin/addproduct" },
-    { name: "Remove Products", path: "/remove-products" },
+    { name: "Remove Products", path: "/admin/deleteproducts" },
     { name: "Order Lists", path: "/order-lists" },
     { name: "Product Stock", path: "/product-stock" },
     { name: "Pricing", path: "/pricing" },

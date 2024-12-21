@@ -9,7 +9,8 @@ import { useNavigate } from "react-router-dom";
 
  export const CartPage = () => {
     const location = useLocation();
-    const Id=location.state?.userId;
+const {UserId}=useSelector((state)=>state.cart)
+    
     
     const  navigate  = useNavigate();
 
@@ -17,9 +18,9 @@ import { useNavigate } from "react-router-dom";
    
     const dispatch = useDispatch();
   
-    const handleRemoveItem = (id) => {
-      dispatch(removeFromCart(id));
-    };
+    // const handleRemoveItem = (id) => {
+    //   dispatch(removeFromCart(id));
+    // };
     const handleCkeckout = () =>
     {
 
@@ -37,7 +38,7 @@ import { useNavigate } from "react-router-dom";
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Left Side: Shipping and Items */}
         <div className="lg:col-span-2">
-          <ShippingAddress  ID={Id}/>
+          <ShippingAddress  ID={UserId}/>
          
           <ItemDetails />
         </div>
