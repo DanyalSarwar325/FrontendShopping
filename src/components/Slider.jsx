@@ -7,13 +7,13 @@ import "swiper/css/autoplay"; // Ensure you import this CSS for autoplay
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 // Import local images
-import image1 from "../assets/images/image1.png";
-import image2 from "../assets/images/image2.png";
-import image3 from "../assets/images/image3.png";
+import one from "../assets/images/one.jpg";
+import two from "../assets/images/two.png";
+import three from "../assets/images/three.png";
 
 const Slider = () => {
   // Array of imported images
-  const slides = [image1, image2, image3];
+  const slides = [one, two, three];
 
   return (
     <div className="w-full mt-8">
@@ -24,7 +24,7 @@ const Slider = () => {
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000 }}
-        className="w-full h-[400px]"
+        className="w-full h-[600px]" // Increased height from 400px to 600px
       >
         {slides.map((image, index) => (
           <SwiperSlide key={index}>

@@ -89,7 +89,7 @@ export const Login = () => {
           <button
             type="submit"
             onClick={handleSubmit}
-            className="mt-6 w-full rounded bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none"
+            className="mt-6 w-full rounded bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none"
           >
             Log In
           </button>

@@ -10,13 +10,24 @@ import { useNavigate } from "react-router-dom";
  export const CartPage = () => {
     const location = useLocation();
 const {UserId}=useSelector((state)=>state.cart)
+console.log(UserId);
+
+
     
     
     const  navigate  = useNavigate();
 
     const { cartItems, totalQuantity, totalPrice } = useSelector(state => state.cart);
+   console.log(cartItems);
+   cartItems.map((itm)=>{
+    const Id=itm.id;
+    const quantity=itm.qauntity;
+
+   })
    
     const dispatch = useDispatch();
+ 
+  
   
     // const handleRemoveItem = (id) => {
     //   dispatch(removeFromCart(id));

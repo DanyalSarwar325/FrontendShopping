@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import PasswordStrengthMeter from "../components/PasswordStrengthMeter.jsx";
+import {PasswordStrengthMeter} from "../components/PasswordStrengthMeter.jsx";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 export const SignUp = () => {
@@ -40,7 +40,7 @@ export const SignUp = () => {
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <div className="w-[500px] rounded-lg bg-white p-10 shadow-lg">
         <h1 className="text-3xl font-bold text-gray-800 text-center">
-          Welcome to My Daraz
+          Welcome to Style Sphere
         </h1>
         <p className="mt-2 text-sm text-gray-600 text-center">
           Already have an account?{" "}
@@ -125,7 +125,7 @@ export const SignUp = () => {
           <button
             type="submit"
             onClick={handleSubmit}
-            className="mt-6 w-full rounded bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none"
+            className="mt-6 w-full rounded bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none"
           >
             Create an account
           </button>

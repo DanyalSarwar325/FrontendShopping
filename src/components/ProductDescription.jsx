@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
@@ -8,6 +8,10 @@ export const ProductDescription = () => {
   const { Description, Image, Price, Rating ,orignalPrice,Discount,subImages} = location.state || {};
   console.log(subImages);
   const [MainImage,setMainImage]=useState(Image)
+  useEffect(() => {
+    console.log(location.state);
+  }, [location]);
+  
   const handleImageChange=(image)=>{
     setMainImage(image)
   }
