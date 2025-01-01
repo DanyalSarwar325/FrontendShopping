@@ -75,7 +75,7 @@ const Card = ({ Description, Image, Price, Rating, Name, id, Discount, originalP
         <h3 className="text-sm font-medium text-gray-700 line-clamp-2">{Description}</h3>
         <div className="mt-2 flex items-center space-x-2">
           <span className="text-lg font-semibold text-green-600">Rs.{Price}</span>
-          <span className="text-sm text-gray-500 line-through">{String(originalPrice)}</span>
+          {/* <span className="text-sm text-gray-500 line-through">{String(originalPrice)}</span> */}
         </div>
         <div className="mt-2 flex items-center text-gray-500 text-sm">
           <span>11K+ sold</span>

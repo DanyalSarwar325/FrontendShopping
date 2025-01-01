@@ -5,6 +5,7 @@ import { useSelector,useDispatch } from "react-redux";
 import { removeFromCart, } from "../Store/cartSlice";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
  export const CartPage = () => {
@@ -34,7 +35,9 @@ console.log(UserId);
     // };
     const handleCkeckout = () =>
     {
-
+      toast.success("Order Placed Successfully");
+      
+to
       navigate("/payment", { state: { cartItems, totalPrice } });
 
     }

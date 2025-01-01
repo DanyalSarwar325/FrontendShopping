@@ -7,9 +7,9 @@ import "swiper/css/autoplay"; // Ensure you import this CSS for autoplay
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 // Import local images
-import one from "../assets/images/one.jpg";
-import two from "../assets/images/two.png";
-import three from "../assets/images/three.png";
+import one from "../assets/images/image1.png";
+import two from "../assets/images/image2.png";
+import three from "../assets/images/image3.png";
 
 const Slider = () => {
   // Array of imported images
