@@ -7,9 +7,7 @@ import "swiper/css/autoplay"; // Ensure you import this CSS for autoplay
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 // Import local images
-import one from "/images/b1.png";
-import two from "/images/b1.png";
-import three from "/images/b1.png";
+
 
 const Slider = () => {
   // Array of imported images
@@ -29,7 +27,7 @@ const Slider = () => {
         {slides.map((image, index) => (
           <SwiperSlide key={index}>
             <img
-              src={image} // Use image directly
+              src={"/image/b1.png"} // Use image directly
               alt={`Slide ${index + 1}`}
               className="w-full h-full object-cover"
             />
