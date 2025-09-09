@@ -29,7 +29,7 @@ export const SignUp = () => {
         formData
       );
       toast.success(response.data.message); // Show success toast
-      navigate("/verify");
+      navigate("/login");
     } catch (error) {
       console.error(error.response?.data || "Error occurred");
       toast.error(error.response?.data?.message || "Failed to register"); // Show error toast

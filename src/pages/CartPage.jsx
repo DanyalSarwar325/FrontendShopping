@@ -1,5 +1,5 @@
 import React from "react";
-import { ShippingAddress } from "../components/ShippingAddress";
+import  ShippingAddress  from "../components/ShippingAddress";
 import {ItemDetails} from '../components/ItemDetails';
 import { useSelector,useDispatch } from "react-redux";
 import { removeFromCart, } from "../Store/cartSlice";

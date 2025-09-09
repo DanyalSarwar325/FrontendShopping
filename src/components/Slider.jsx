@@ -16,7 +16,7 @@ const Slider = () => {
   const slides = [one, two, three];
 
   return (
-    <div className="w-full mt-8">
+    <div className="w-2/3 mt-2 mx-20">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={50}

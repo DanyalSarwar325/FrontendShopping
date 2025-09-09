@@ -14,7 +14,7 @@ const categories = [
 
 const Categories = () => {
   return (
-    <div className="flex overflow-x-auto space-x-6 py-4 px-4">
+    <div className="flex overflow-x-auto space-x-6 py-4 px-4 ">
       {categories.map((category, index) => (
         <a
           key={index}

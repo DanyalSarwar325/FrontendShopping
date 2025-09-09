@@ -1,71 +1,57 @@
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import axios from "axios";
+import React, { useState } from 'react';
 
-export const ShippingAddress = ({ ID }) => {
-  const [shippingAddress, setShippingAddress] = useState({});
+const ShippingAddress = () => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [address, setAddress] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
-  useEffect(() => {
-    const fetchShippingAddress = async () => {
-      try {
-        const response = await axios.post("/api/v1/findUser", { ID });
-        setShippingAddress(response.data.user || {});
-      } catch (error) {
-        console.error("Error while fetching shipping address:", error);
-        toast.error("Something went wrong. Please try again.");
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      if (inputValue.trim()) {
+        setAddress(inputValue.trim());
+        setIsEditing(false);
       }
-    };
-
-    if (ID) {
-      fetchShippingAddress();
     }
-  }, [ID]);
+  };
 
-  const { name, addresses } = shippingAddress || {};
-  const address = addresses && addresses.length > 0 ? addresses[0] : null;
-  const  phone = address?.phone
-
+  const handleEdit = () => {
+    setInputValue(address);
+    setIsEditing(true);
+  };
 
   return (
-    <div className="bg-white p-6 mb-6 rounded shadow">
-      <div className="flex justify-between items-center">
-        <h2 className="text-lg font-bold">Shipping address</h2>
-        <button className="text-blue-500 hover:underline">Change address</button>
-      </div>
-      <div className="mt-4 text-sm">
-        <p className="font-medium">{name || "Name not available"}</p>
-        {address ? (
-          <p>
-             {address.address},
-          </p>
-        ) : (
-          <p>Address not available</p>
-        )}
+    <div className="bg-white p-6 rounded shadow-md w-full  mb-6 ">
+      <h2 className="text-lg font-semibold mb-4">Shipping Address</h2>
 
-{address ? (
-          <p>
-             {address.phone},
-          </p>
-        ) : (
-          <p>Phone Number not available</p>
-        )}
-       
-        {address ? (
-          <p>
-            {address.state}, {address.postalcode}, {address.country}
-          </p>
-        ) : (
-          <p>Address details not available</p>
-        )}
-      </div>
-      <p className="text-green-500 text-sm mt-4">Shipping: FREE</p>
-      <p className="text-sm mt-1">
-        Delivery: 7-11 business days
-        <br />
-        <span className="text-gray-500">
-          Courier company: Speedaf, FEISU, Leopards, etc.
-        </span>
-      </p>
+      {isEditing ? (
+        <textarea
+          className="w-full p-3 border rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+          rows={4}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={handleKeyPress}
+          placeholder="Enter your full address and press Enter to save..."
+        />
+      ) : (
+        <div className="flex justify-between items-start">
+          <div className="whitespace-pre-wrap text-gray-800">
+            {address ? address : <span className="text-gray-400 italic">No address added.</span>}
+          </div>
+          <button
+            onClick={address ? handleEdit : () => setIsEditing(true)}
+            className="text-blue-600 hover:underline ml-4 whitespace-nowrap"
+          >
+            {address ? 'Edit address' : 'Add address'}
+          </button>
+        </div>
+      )}
+
+      <p className="mt-4 text-green-600 text-sm">Shipping: FREE</p>
+      <p className="text-sm text-gray-500">Delivery: 7-11 business days</p>
+      <p className="text-sm text-gray-500">Courier company: Speedaf, FEISU, Leopards, etc.</p>
     </div>
   );
 };
+
+export default ShippingAddress;

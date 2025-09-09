@@ -1,4 +1,5 @@
 import Slider from "../components/Slider";
+import WelcomeBanner from "../components/WelcomeBanner";
 import Card from "../components/Card";
 import axios from "axios";
 import { useEffect, useState, useRef } from "react";
@@ -50,7 +51,8 @@ export const Home = () => {
 
   return (
     <>
-      <Slider />
+    <WelcomeBanner/>
+      {/* <Slider /> */}
       <div className="mt-8 p-3">
         {/* Categories Section */}
         <div className="flex overflow-x-auto space-x-6 py-4 px-4">

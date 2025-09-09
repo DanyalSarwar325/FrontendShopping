@@ -45,12 +45,12 @@ const Card = ({ Description, Image, Price, Rating, Name, id, Discount, originalP
       }
 
       // Check if user has an address
-      if (!data?.addresses?.length || !data.addresses[0]?.country || !data.addresses[0]?.state) {
-        navigate("/address", { state: { userId: UserId } });
-      } else {
+      // if (!data?.addresses?.length || !data.addresses[0]?.country || !data.addresses[0]?.state) {
+      //   // navigate("/address", { state: { userId: UserId } });
+      // } else {
         toast.success("Successfully added to cart!");
         navigate("/dashboard", { state: { userId: UserId } });
-      }
+      
     } catch (error) {
       console.error("Error while adding to cart:", error);
       toast.error("Something went wrong. Please try again.");
