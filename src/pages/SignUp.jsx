@@ -25,7 +25,8 @@ export const SignUp = () => {
       console.log(formData);
 
       const response = await axios.post(
-        "http://localhost:5000/api/v1/register",
+        `${import.meta.env.VITE_API_URL}/api/v1/register`,
+        // "http://localhost:5000/api/v1/register",
         formData
       );
       toast.success(response.data.message); // Show success toast
